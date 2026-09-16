@@ -15,9 +15,9 @@ services:
       PORT: "3000"
       DATA_FILE: /data/rooms.json
       BUILD_SHA: ${BUILD_SHA:?Set BUILD_SHA}
-      VIRTUAL_HOST: childrex.com
+      VIRTUAL_HOST: games.penkra.com,childrex.com
       VIRTUAL_PORT: "3000"
-      LETSENCRYPT_HOST: childrex.com
+      LETSENCRYPT_HOST: games.penkra.com,childrex.com
     volumes:
       - /srv/childrex-sequence/data:/data
     networks:

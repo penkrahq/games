@@ -5,8 +5,16 @@ import '@fontsource/jost/400.css';
 import '@fontsource/manrope/400.css';
 import '@fontsource/manrope/600.css';
 import '@fontsource/manrope/700.css';
+import '@fontsource/bebas-neue/400.css';
+import '@fontsource/inter/500.css';
 import { App } from './App';
+import { Landing } from './Landing';
+import { Connect4App } from './Connect4App';
 import './styles.css';
 import './fluid.css';
+import './landing.css';
 
-createRoot(document.getElementById('root')!).render(<StrictMode><App /><Toaster position="bottom-center" theme="dark" visibleToasts={2} toastOptions={{duration:2200,className:'sequence-toast'}}/></StrictMode>);
+const sequence=location.pathname==='/sequence'||location.pathname.startsWith('/sequence/');
+const connect4=location.pathname==='/connect4'||location.pathname.startsWith('/connect4/');
+document.title=sequence?'Sequence · Penkra Games':connect4?'Connect 4 · Penkra Games':'Penkra Games · Play together';
+createRoot(document.getElementById('root')!).render(<StrictMode>{sequence?<App/>:connect4?<Connect4App/>:<Landing/>}<Toaster position="bottom-center" theme="dark" visibleToasts={2} toastOptions={{duration:2200,className:'sequence-toast'}}/></StrictMode>);

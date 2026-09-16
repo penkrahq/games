@@ -6,7 +6,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: childrex-sequence-production
+  group: childrex-production
   cancel-in-progress: false
 jobs:
   verify:

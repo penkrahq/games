@@ -3,7 +3,7 @@ import type { CardInstance, Cell, LastMove, LegalAction, SequenceRecord, Team, S
 export interface Member { seatId:string; name:string; avatarId:string; connected:boolean; joinedAt:number; isYou:boolean }
 export interface RoomLookup { found:boolean; joinable?:boolean; count?:number }
 export interface RoomSnapshot {
-  id:string; code:string; version:number; phase:'lobby'|'playing'|'finished'; isHost:boolean;
+  id:string; code:string; version:number; phase:'lobby'|'playing'|'finished'; isHost:boolean; hostSeatId:string|null; tvConnected?:boolean;
   teams:Team[]; seats:Seat[]; members:Member[]; yourSeatId:string|null;
   yourHand:CardInstance[]; yourActions:LegalAction[];
   round:null|{id:string;version:number;turn:number;turnOrder:string[];currentSeatId:string|null;chips:(string|null)[][];sequences:SequenceRecord[];lastMove:LastMove|null;result:null|{winnerTeamId:string|null;reason:string};exchangeUsed:boolean;handCounts:Record<string,number>};

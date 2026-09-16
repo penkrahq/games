@@ -1,6 +1,6 @@
-# Childrex Sequence
+# Childrex / Penkra Games
 
-A server-authoritative multiplayer Sequence game for `https://childrex.com/sequence`.
+A server-authoritative multiplayer games site for `https://games.penkra.com`. The current playable games are Sequence at `/sequence/` and Connect 4 at `/connect4/`; `https://childrex.com` redirects to the corresponding Penkra Games route.
 
 ## Local development
 
@@ -16,6 +16,6 @@ The application listens on port 3000 by default. `pnpm verify` runs lint, both T
 
 ## Runtime
 
-Set `DATA_FILE=/data/rooms.json` for atomic restart persistence. The production Compose file mounts only `/srv/childrex-sequence/data`, joins the existing `nginx-proxy` network, runs as a non-root user with no capabilities, and exposes no host port. The root route serves a Childrex placeholder; the game is under `/sequence/`.
+Set `DATA_FILE=/data/rooms.json` for atomic restart persistence. Connect 4 uses the adjacent `rooms.json.connect4` file. The production Compose file mounts only `/srv/childrex-sequence/data`, joins the existing `nginx-proxy` network, runs as a non-root user with no capabilities, and exposes no host port. The root route serves the Penkra Games landing page.
 
 The complete product, interaction, rules, QA, and operations contract is in `SEQUENCE_IMPLEMENTATION_PLAN.md`.
