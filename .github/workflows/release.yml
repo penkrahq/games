@@ -24,7 +24,7 @@ jobs:
       - run: pnpm test:e2e
   deploy:
     needs: verify
-    runs-on: [self-hosted, linux, ARM64, childrex-sequence-production]
+    runs-on: [self-hosted, h-prod]
     environment: production
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
